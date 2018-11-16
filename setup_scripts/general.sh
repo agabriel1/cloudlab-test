@@ -11,6 +11,12 @@ sudo apt-get install openssh-server openssh-client
 sudo cp /etc/ssh/sshd_config  /etc/ssh/sshd_config.original_copy
 
 #
+# open port 9090 and 9999 for all communications
+#
+sudo ufw allow 9090
+sudo ufw allow 9999
+
+#
 # setup nmap
 #
 sudo apt-get -y install nmap
@@ -29,14 +35,10 @@ sudo bash -c "echo 'ANACONDA_HOME=/opt/anaconda3/' >> /etc/profile"
 sudo bash -c "echo 'PATH=/opt/anaconda3/bin:$PATH' >> /etc/profile"
 
 # create a user named seed with password dees. 
-sudo useradd -m -s /bin/bash seed
-sudo passwd dees
-#-p dees
+sudo useradd -m -p dees -s /bin/bash seed
 
 # create a user named root with password seedubuntu. 
-sudo useradd -m -s /bin/bash root 
-sudo passwd seedubuntu
-#-p seedubuntu
+sudo useradd -m -p seedubuntu -s /bin/bash root 
 
 # add seed to sudo
 sudo usermod -a -G sudo seed
