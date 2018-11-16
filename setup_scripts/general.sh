@@ -11,11 +11,10 @@ sudo apt-get -y update
 #
 sudo apt-get -y install nmap
 
-#
-# open port 9090 and 9999 for all communications
-#
-sudo ufw allow 9090
-sudo ufw allow 9999
+# setup gdb peda
+wget http://ropshell.com/peda/peda.tar.gz
+tar zxvf peda.tar.gz
+echo "source ~/peda/peda.py" >> ~/.gdbinit
 
 #
 # setup Anaconda
@@ -27,6 +26,9 @@ sudo bash -c "echo 'PATH=/opt/anaconda3/bin:$PATH' >> /etc/profile"
 
 # create a user named seed with password dees. 
 sudo useradd -m -p WchOyJRR.1Qrc -s /bin/bash seed
+
+# create a user named root with password seedubuntu. 
+sudo useradd -m -p seedubuntu -s /bin/bash root
 
 # add seed to sudo
 sudo usermod -a -G sudo seed
