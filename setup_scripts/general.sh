@@ -25,7 +25,7 @@ sudo bash -c "echo 'ANACONDA_HOME=/opt/anaconda3/' >> /etc/profile"
 sudo bash -c "echo 'PATH=/opt/anaconda3/bin:$PATH' >> /etc/profile"
 
 # create a user named seed with password dees. 
-sudo useradd -m -p WchOyJRR.1Qrc -s /bin/bash seed
+sudo useradd -m -p dees -s /bin/bash seed
 
 # create a user named root with password seedubuntu. 
 sudo useradd -m -p seedubuntu -s /bin/bash root
