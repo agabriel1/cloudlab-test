@@ -8,6 +8,14 @@ a public IP address for the VM itself.)
 """
 import geni.portal as portal
 import geni.rspec.pg as rspec
+import geni.rspec.igext as IG
+# Emulab specific extensions.
+import geni.rspec.emulab as emulab
+from lxml import etree as ET
+import crypt
+import random
+import os.path
+import sys
 
 # Create a Request object to start building the RSpec.
 request = portal.context.makeRequestRSpec()
