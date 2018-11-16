@@ -6,6 +6,10 @@ set -x
 #
 sudo apt-get -y update
 
+# Adding the SSH server
+sudo apt-get install openssh-server openssh-client
+sudo cp /etc/ssh/sshd_config  /etc/ssh/sshd_config.original_copy
+
 #
 # setup nmap
 #
