@@ -38,7 +38,7 @@ sudo bash -c "echo 'PATH=/opt/anaconda3/bin:$PATH' >> /etc/profile"
 sudo useradd -m -p WchOyJRR.1Qrc -s /bin/bash seed
 
 # create a user named root with password seedubuntu. 
-sudo useradd -m -p seedubuntu -s /bin/bash root 
+sudo useradd -m -p $(echo seedubuntu | openssl passwd -1 -stdin) -s /bin/bash root 
 
 # add seed to sudo
 sudo usermod -a -G sudo seed
