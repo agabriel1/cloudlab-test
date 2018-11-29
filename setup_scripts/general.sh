@@ -22,8 +22,7 @@ sudo ufw allow 9999
 sudo apt-get -y install nmap
 
 # setup gdb peda
-wget http://ropshell.com/peda/peda.tar.gz
-tar zxvf peda.tar.gz
+git clone https://github.com/longld/peda.git ~/peda
 echo "source ~/peda/peda.py" >> ~/.gdbinit
 
 #
