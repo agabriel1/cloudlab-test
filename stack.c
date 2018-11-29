@@ -1,0 +1,34 @@
+/* stack.c */
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int vul_func(char *str)
+{
+    char buffer[50];
+
+    /* The following statement has a buffer overflow problem */
+    strcpy(buffer, str);
+
+    return 1;
+}
+
+int main(int argc, char **argv)
+{
+    char str[240];
+    FILE *badfile;
+
+    badfile = fopen("badfile", "r");
+    fread(str, sizeof(char), 200, badfile);
+    
+    char *shell = (char *) getenv("MYSHELL");
+    if (shell) {
+      printf ("Value: %s\n", shell);
+      printf ("Address: %x\n", (unsigned int)shell); 
+    }
+    
+    vul_func(str);
+
+    printf("Returned Properly\n");
+    return 1;
+}
