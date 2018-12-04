@@ -37,5 +37,6 @@ node.addService(RSpec.Execute(shell="/bin/sh",
 node.addService(RSpec.Execute(shell="/bin/sh",
                               command='sudo systemctl status apache2'))
 node.addService(RSpec.Execute("sh", "sudo bash /local/repository/setup_scripts/general.sh"))
+rspec.addResource(node)
 # Print the RSpec to the enclosing page.
 portal.context.printRequestRSpec()
