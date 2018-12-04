@@ -32,7 +32,7 @@ node.addService(RSpec.Execute(shell="/bin/sh",
 node.addService(RSpec.Execute(shell="/bin/sh",
                               command="sudo apt install -y apache2"))
 node.addService(RSpec.Execute(shell="/bin/sh",
-                              command='sudo suwf allow in "Apache Full"'))
+                              command='sudo su allow in "Apache Full"'))
 node.addService(RSpec.Execute(shell="/bin/sh",
                               command='sudo systemctl status apache2'))
 node.addService(RSpec.Execute("sh", "sudo bash /local/repository/setup_scripts/general.sh"))
