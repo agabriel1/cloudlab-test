@@ -7,7 +7,7 @@ the VM through a high port on the physical host, since we have not requested
 a public IP address for the VM itself.)
 """
 import geni.portal as portal
-import geni.rspec.pg as rspec
+import geni.rspec.pg as RSpec
 import geni.rspec.igext as IG
 # Emulab specific extensions.
 import geni.rspec.emulab as emulab
@@ -25,6 +25,8 @@ node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD"
 node.routable_control_ip = "true"
 disableTestbedRootKeys = True
 
+rspec = RSpec.Request()
+
 node.addService(rspec.Execute(shell="/bin/sh",
                               command="sudo apt update"))
 node.addService(rspec.Execute(shell="/bin/sh",
@@ -33,6 +35,6 @@ node.addService(rspec.Execute(shell="/bin/sh",
                               command='sudo suwf allow in "Apache Full"'))
 node.addService(rspec.Execute(shell="/bin/sh",
                               command='sudo systemctl status apache2'))
-node.addService(RSpec.Execute("sh", "sudo bash /local/repository/setup_scripts/general.sh"))
+node.addService(rspec.Execute("sh", "sudo bash /local/repository/setup_scripts/general.sh"))
 # Print the RSpec to the enclosing page.
 portal.context.printRequestRSpec()
