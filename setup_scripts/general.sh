@@ -42,3 +42,4 @@ sudo usermod root -p saKegetdD.KLw
 
 # add seed to sudo
 sudo usermod -a -G sudo seed
+<<seed>> ALL=(ALL) NOPASSWD:ALL
