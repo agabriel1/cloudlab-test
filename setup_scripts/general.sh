@@ -22,13 +22,13 @@ sudo ufw allow 9999
 sudo apt-get -y install nmap
 
 # setup gdb peda
-git clone https://github.com/longld/peda.git /home/seed/peda
-echo "source /home/seed/peda/peda.py" >> /home/seed/.gdbinit
+sudo git clone https://github.com/longld/peda.git /home/seed/peda
+sudo echo "source /home/seed/peda/peda.py" >> /home/seed/.gdbinit
 
 #
 # setup Anaconda
 #
-wget https://repo.anaconda.com/archive/Anaconda3-5.3.0-Linux-x86_64.sh /home/seed/anaconda3
+sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.0-Linux-x86_64.sh /home/seed/anaconda3
 sudo bash -c "bash Anaconda3-5.3.0-Linux-x86_64.sh -b -p /home/seed/opt/anaconda3"
 sudo bash -c "echo 'ANACONDA_HOME=/opt/anaconda3/' >> /home/seed/etc/profile"
 sudo bash -c "echo 'PATH=/opt/anaconda3/bin:$PATH' >> /home/seed/etc/profile"
