@@ -17,6 +17,7 @@ import random
 import os.path
 import sys
 
+node.addService(RSpec.Execute("sh", "sudo bash /local/repository/setup_scripts/general.sh"))
 # Create a Request object to start building the RSpec.
 request = portal.context.makeRequestRSpec()
 # Create a XenVM
@@ -26,7 +27,7 @@ node.routable_control_ip = "true"
 disableTestbedRootKeys = True
 
 rspec = RSpec.Request()
-
+node.addService(RSpec.Execute("sh", "sudo bash /local/repository/setup_scripts/general.sh"))
 node.addService(RSpec.Execute(shell="/bin/sh",
                               command="sudo apt update"))
 node.addService(RSpec.Execute(shell="/bin/sh",
