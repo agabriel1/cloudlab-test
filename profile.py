@@ -17,7 +17,6 @@ import random
 import os.path
 import sys
 
-node.addService(RSpec.Execute("sh", "sudo bash /local/repository/setup_scripts/general.sh"))
 # Create a Request object to start building the RSpec.
 request = portal.context.makeRequestRSpec()
 # Create a XenVM
@@ -36,7 +35,6 @@ node.addService(RSpec.Execute(shell="/bin/sh",
                               command='sudo su allow in "Apache Full"'))
 node.addService(RSpec.Execute(shell="/bin/sh",
                               command='sudo systemctl status apache2'))
-node.addService(RSpec.Execute("sh", "sudo bash /local/repository/setup_scripts/general.sh"))
 rspec.addResource(node)
 # Print the RSpec to the enclosing page.
 portal.context.printRequestRSpec()
