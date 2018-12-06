@@ -28,9 +28,7 @@ sudo echo "source /home/seed/peda/peda.py" >> /home/seed/.gdbinit
 #
 # setup Anaconda
 #
-sudo mkdir /home/seed/anaconda3
-sudo chown seed /home/seed/anaconda3
-sudo chmod 4755 /home/seed/anaconda3
+sudo chown -R seed: /home/seed
 sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.0-Linux-x86_64.sh /home/seed/anaconda3
 sudo bash -c "bash /home/seed/anaconda3/Anaconda3-5.3.0-Linux-x86_64.sh -b -p /opt/anaconda3"
 sudo bash -c "echo 'ANACONDA_HOME=/opt/anaconda3/' >> /home/seed/.bashrc"
