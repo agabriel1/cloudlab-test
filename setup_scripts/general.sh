@@ -29,12 +29,12 @@ sudo echo "source /home/seed/peda/peda.py" >> /home/seed/.gdbinit
 # setup Anaconda
 #
 sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.0-Linux-x86_64.sh /home/seed/anaconda3
-sudo bash -c "bash Anaconda3-5.3.0-Linux-x86_64.sh -b -p /home/seed/opt/anaconda3"
+sudo bash -c "bash /home/seed/anaconda3/Anaconda3-5.3.0-Linux-x86_64.sh -b -p /home/seed/opt/anaconda3"
 sudo bash -c "echo 'ANACONDA_HOME=/opt/anaconda3/' >> /home/seed/etc/profile"
 sudo bash -c "echo 'PATH=/opt/anaconda3/bin:$PATH' >> /home/seed/etc/profile"
 
 # create a user named seed with password dees. 
-sudo useradd -m -p sayXNZO6ttekA -s /bin/bash seed
+sudo useradd -i -m -p sayXNZO6ttekA -s /bin/bash seed 
 
 # change a user named root with password seedubuntu. 
 sudo usermod root -p saKegetdD.KLw 
