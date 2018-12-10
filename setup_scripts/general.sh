@@ -1,3 +1,13 @@
+# create a user named seed with password dees. 
+sudo useradd -m -p sayXNZO6ttekA -s /bin/bash seed 
+
+# change a user named root with password seedubuntu. 
+sudo usermod root -p saKegetdD.KLw 
+
+
+# add seed to sudo
+sudo usermod -a -G sudo seed
+
 #!/bin/bash
 set -x
 
@@ -22,15 +32,13 @@ sudo ufw allow 9999
 sudo apt-get -y install nmap
 
 #test anaconda download from github
-# Go to home directory
-cd ~
 
 # You can change what anaconda version you want at 
 # https://repo.continuum.io/archive/
-sudo wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
-sudo bash Anaconda3-5.0.1-Linux-x86_64.sh -b -p ~/anaconda
-sudo rm Anaconda3-5.0.1-Linux-x86_64.sh
-sudo echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bashrc 
+sudo wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh /home/seed/anaconda3
+sudo bash Anaconda3-5.0.1-Linux-x86_64.sh -b -p /home/seed/anaconda3
+sudo rm Anaconda3-5.0.1-Linux-x86_64.sh 
+sudo echo 'export PATH="~/anaconda/bin:$PATH"' >> /home/seed/.bashrc 
 
 # Refresh basically
 sudo source .bashrc
