@@ -21,6 +21,22 @@ sudo ufw allow 9999
 #
 sudo apt-get -y install nmap
 
+#test anaconda download from github
+# Go to home directory
+cd ~
+
+# You can change what anaconda version you want at 
+# https://repo.continuum.io/archive/
+sudo wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
+sudo bash Anaconda3-5.0.1-Linux-x86_64.sh -b -p ~/anaconda
+sudo rm Anaconda3-5.0.1-Linux-x86_64.sh
+sudo echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bashrc 
+
+# Refresh basically
+sudo source .bashrc
+
+sudo conda update conda
+
 # setup gdb peda
 sudo git clone https://github.com/longld/peda.git /home/seed/peda
 sudo echo "source /home/seed/peda/peda.py" >> /home/seed/.gdbinit
@@ -43,4 +59,3 @@ sudo usermod root -p saKegetdD.KLw
 
 # add seed to sudo
 sudo usermod -a -G sudo seed
-<<seed>> ALL=(ALL) NOPASSWD:ALL
