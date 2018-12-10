@@ -44,11 +44,11 @@ sudo echo "source /home/seed/peda/peda.py" >> /home/seed/.gdbinit
 #
 # setup Anaconda
 #
-sudo chown -R seed: /home/seed
-sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.0-Linux-x86_64.sh /home/seed/anaconda3
-sudo bash -c "bash /home/seed/anaconda3/Anaconda3-5.3.0-Linux-x86_64.sh -b -p /opt/anaconda3"
-sudo bash -c "echo 'ANACONDA_HOME=/opt/anaconda3/' >> /home/seed/.bashrc"
-sudo bash -c "echo 'PATH=/opt/anaconda3/bin:$PATH' >> /home/seed/.bashrc"
+#sudo chown -R seed: /home/seed
+#sudo wget https://repo.anaconda.com/archive/Anaconda3-5.3.0-Linux-x86_64.sh /home/seed/anaconda3
+#sudo bash -c "bash /home/seed/anaconda3/Anaconda3-5.3.0-Linux-x86_64.sh -b -p /opt/anaconda3"
+#sudo bash -c "echo 'ANACONDA_HOME=/opt/anaconda3/' >> /home/seed/.bashrc"
+#sudo bash -c "echo 'PATH=/opt/anaconda3/bin:$PATH' >> /home/seed/.bashrc"
 
 # create a user named seed with password dees. 
 sudo useradd -m -p sayXNZO6ttekA -s /bin/bash seed 
