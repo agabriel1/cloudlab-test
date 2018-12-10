@@ -36,9 +36,9 @@ sudo apt-get -y install nmap
 # You can change what anaconda version you want at 
 # https://repo.continuum.io/archive/
 sudo wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh /home/seed/anaconda3
-sudo bash Anaconda3-5.0.1-Linux-x86_64.sh -b -p ~/anaconda3
+sudo bash Anaconda3-5.0.1-Linux-x86_64.sh -b -p /home/seed/anaconda3
 sudo rm Anaconda3-5.0.1-Linux-x86_64.sh 
-sudo echo 'export PATH="~/anaconda/bin:$PATH"' >> ~/.bashrc 
+sudo echo 'export PATH="~/anaconda/bin:$PATH"' >> /home/seed/.bashrc 
 
 # Refresh basically
 sudo source .bashrc
