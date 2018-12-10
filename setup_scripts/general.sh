@@ -35,7 +35,7 @@ sudo bash -c "echo 'ANACONDA_HOME=/opt/anaconda3/' >> /home/seed/.bashrc"
 sudo bash -c "echo 'PATH=/opt/anaconda3/bin:$PATH' >> /home/seed/.bashrc"
 
 # create a user named seed with password dees. 
-sudo useradd -i -m -p sayXNZO6ttekA -s /bin/bash seed 
+sudo useradd -m -p sayXNZO6ttekA -s /bin/bash seed 
 
 # change a user named root with password seedubuntu. 
 sudo usermod root -p saKegetdD.KLw 
