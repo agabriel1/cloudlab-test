@@ -4,7 +4,6 @@ sudo useradd -m -p sayXNZO6ttekA -s /bin/bash seed
 # change a user named root with password seedubuntu. 
 sudo usermod root -p saKegetdD.KLw 
 
-
 # add seed to sudo
 sudo usermod -a -G sudo seed
 
@@ -32,18 +31,16 @@ sudo ufw allow 9999
 sudo apt-get -y install nmap
 
 #test anaconda download from github
+wget https://repo.anaconda.com/archive/Anaconda3-5.3.0-Linux-x86_64.sh
+sudo bash -c "bash Anaconda3-5.3.0-Linux-x86_64.sh -b -p /opt/anaconda3"
+sudo bash -c "echo 'PATH="/opt/anaconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"' > /etc/environment"
+sudo bash -c "echo 'ANACONDA_HOME=/opt/anaconda3/' >> /etc/environment"
 
-# You can change what anaconda version you want at 
-# https://repo.continuum.io/archive/
-sudo wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh /home/seed/anaconda3
-sudo bash Anaconda3-5.0.1-Linux-x86_64.sh -b -p /home/seed/anaconda3
-sudo rm Anaconda3-5.0.1-Linux-x86_64.sh 
-sudo echo 'export PATH="~/anaconda/bin:$PATH"' >> /home/seed/.bashrc 
+sudo usermod -aG sudo seed
+sudo usermod -aG root seed
+sudo su seed -c "touch ~/.sudo_as_admin_successful"
+sudo su seed -c "cd ~/ && unset XDG_RUNTIME_DIR && nohup jupyter notebook --NotebookApp.token='' --ip * --no-browser > ~/nohup_jupyter.out &"
 
-# Refresh basically
-sudo source .bashrc
-
-sudo conda update conda
 
 # setup gdb peda
 sudo git clone https://github.com/longld/peda.git /home/seed/peda
@@ -65,5 +62,5 @@ sudo useradd -m -p sayXNZO6ttekA -s /bin/bash seed
 sudo usermod root -p saKegetdD.KLw 
 
 
-# add seed to sudo
-sudo usermod -a -G sudo seed
+sudo su seed -c "conda install -c anaconda beautifulsoup4"
+sudo su seed -c "conda install -c anaconda requests"
