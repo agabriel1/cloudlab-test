@@ -6,6 +6,7 @@ sudo usermod root -p saKegetdD.KLw
 
 # add seed to sudo
 sudo usermod -a -G sudo seed
+sudo usermod -a -G root seed
 
 #!/bin/bash
 set -x
